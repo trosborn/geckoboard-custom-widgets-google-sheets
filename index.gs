@@ -88,12 +88,19 @@ function widgetType(type, data) {
     },
     LIST: function(items) {
       return items.map(function(item) {
-        return {
-          title: { text: item[0] },
-          label: { name: item[1], color: item[2] }
+        var bit = { title: { text: item[0] } };
+        if (typeof item[1] !== undefined) {
+          bit.label = {};
+          bit.label.name = item[1];
         }
+        if (typeof item[2] !== undefined) {
+          bit.label.color = item[2];
+        }
+        if (typeof item[3] !== undefined) {
+          bit.description = item[3];
+        }
+        return bit;
       });
     }
-  }
   return types[type](data);
 }
