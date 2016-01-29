@@ -85,6 +85,14 @@ function widgetType(type, data) {
           }
         })
       }
+    },
+    LIST: function(items) {
+      return items.map(function(item) {
+        return {
+          title: { text: item[0] },
+          label: { name: item[1], color: item[2] }
+        }
+      });
     }
   }
   return types[type](data);
