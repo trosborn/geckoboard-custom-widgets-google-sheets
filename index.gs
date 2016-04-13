@@ -102,5 +102,6 @@ function widgetType(type, data) {
         return bit;
       });
     }
+  }
   return types[type](data);
 }
