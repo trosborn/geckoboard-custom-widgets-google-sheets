@@ -101,6 +101,15 @@ function widgetType(type, data) {
         }
         return bit;
       });
+    },
+    FUNNEL: function(items) {
+      var itemList = items.map(function(item) {
+        return {
+          value: item[0],
+          label: item[1]
+        } 
+      })
+      return { item: itemList }
     }
   }
   return types[type](data);
