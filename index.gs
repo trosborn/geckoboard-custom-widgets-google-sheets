@@ -109,7 +109,11 @@ function widgetType(type, data) {
           label: item[1]
         } 
       })
-      return { item: itemList }
+      var obj = { item: itemList };
+      if (items[0][2] == 'percentage' && items[0][3] == 'hide') {
+        obj.percentage = 'hide';
+      }
+      return obj;
     }
   }
   return types[type](data);
