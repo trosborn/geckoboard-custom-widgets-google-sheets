@@ -114,6 +114,18 @@ function widgetType(type, data) {
         obj.percentage = 'hide';
       }
       return obj;
+    },
+    PIE: function(items) {
+      var slices = {
+        item: items.map(function(slice) {
+          return {
+            value: slice[0],
+            label: slice[1],
+            color: slice[2],
+          }
+        })
+      }
+      return slices;
     }
   }
   return types[type](data);
