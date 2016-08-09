@@ -126,6 +126,15 @@ function widgetType(type, data) {
         })
       }
       return slices;
+    },
+    TEXT: function(items) {
+      return { 
+        item: items.map(function(item) {
+          return { 
+            text: item[0]
+          }
+        })
+      }
     }
   }
   return types[type](data);
